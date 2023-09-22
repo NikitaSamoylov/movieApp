@@ -1,0 +1,41 @@
+.card {
+    transition: .3s;
+
+    &__poster {
+        width: 23.4rem;
+        height: 34.3rem;
+        border-radius: 1rem;
+        margin-bottom: 2rem;
+    }
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+
+.card-buttons {
+
+    &__icon {
+        padding: 0.9rem 1.2rem;
+    }
+    &__favorites {
+        background-color: transparent;
+        border: 1px solid $button-border-color;
+        color: $button-text-color;
+        border-radius: 0.5rem;
+        font-size: 1.8rem;
+        cursor: pointer;
+        transition: .3s;
+    }
+    &__favorites--text {
+        padding: 1rem 3.3rem;
+    }
+    &__favorites:hover {
+        background-color: $buttons-bg-color-secondary;
+        border-color: $button-border-color-secondary;
+    }
+}

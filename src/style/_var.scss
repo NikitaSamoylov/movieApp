@@ -1,11 +1,21 @@
-$font-family: "Roboto-Thin";
+$font-family: "Roboto-Light";
 $content-width: 736px;
 $container-offset: 15px;
 $container-width: $content-width + ($container-offset * 2);
 
 $bg-color-primary: #fff;
-$font-color-primary: #141313;
+$font-color-primary: #4c2d01;
 $font-color-secondary: #EA920E;
 
 // breakpoints------
 $big-laptop: 1200px;
+
+// buttons border
+$button-border-color: #EA920E;
+$button-border-color-secondary: #f9efde;
+
+//buttons bg color
+$buttons-bg-color-secondary: #f9efde; 
+
+//buttons text color
+$button-text-color: #EA920E;
