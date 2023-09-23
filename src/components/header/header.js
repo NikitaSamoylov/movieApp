@@ -24,7 +24,7 @@ export class Header extends DivComponent {
             <div class="header-info__favorites">
                 <img class="favorites-like" src="/assets/favorites.png">
                 избранное 
-                  <span class="favorites-counter">${this.appState.total}
+                  <span class="favorites-counter">${this.appState.favorites.length}
                   </span>
             </div>
             <div class="header-info__search header-search">

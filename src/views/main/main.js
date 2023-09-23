@@ -21,9 +21,8 @@ export class MainView extends AbstractView {
     }
 
     appStateHook(path) {
-        console.log(path)
         if (path === 'favorites') {
-            console.log(path)
+            this.render();
         }
     }
     async stateHook(path) {
@@ -68,7 +67,7 @@ export class MainView extends AbstractView {
         this.app.innerHTML = '';
         const main = document.createElement('div');
         main.classList.add('main');
-        main.append(new CardsList(this.state).render())
+        main.append(new CardsList(this.state, this.appState).render())
         this.app.append(main);
         this.renderHeader()
     }
