@@ -27,7 +27,7 @@ export class Card extends DivComponent {
             <img class="card__poster" src="${this.state.poster ? this.state.poster : this.defaultImg}">   
 
             <div class="card__buttons card-buttons">
-                <button class="card-buttons__favorites card-buttons__favorites--like">
+                <button class="card-buttons__favorites card-buttons__favorites--like ${exist ? 'item-in-favorites' : ""}">
                     <img class="card-buttons__icon" src="/assets/favorites-button.png" alt="like">
                 </button>
                 <button class="card-buttons__favorites card-buttons__favorites--text">

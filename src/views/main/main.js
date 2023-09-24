@@ -2,6 +2,7 @@ import onChange from "on-change";
 import { AbstractView } from "../../common/view";
 import { Header } from "../../components/header/header";
 import { CardsList } from "../../components/cards-list/cards-list";
+import { Search } from "../../components/search/search";
 
 export class MainView extends AbstractView {
     constructor(appState) {
@@ -10,6 +11,11 @@ export class MainView extends AbstractView {
         this.appState = onChange(this.appState, this.appStateHook.bind(this));
         this.state = onChange(this.state, this.stateHook.bind(this));
         this.setTitle('Поиск фильма');
+    }
+
+    destroy() {
+        onChange.unsubscribe(this.appState);
+        onChange.unsubscribe(this.state);
     }
 
     state = {
@@ -67,12 +73,13 @@ export class MainView extends AbstractView {
         this.app.innerHTML = '';
         const main = document.createElement('div');
         main.classList.add('main');
-        main.append(new CardsList(this.state, this.appState).render())
+        main.append(new Search(this.state).render());
+        main.append(new CardsList(this.appState, this.state).render())
         this.app.append(main);
         this.renderHeader()
     }
     renderHeader() {
-        const header = new Header(this.appState, this.state).render();
+        const header = new Header(this.appState).render();
         this.app.prepend(header);
     }
 

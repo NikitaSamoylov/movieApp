@@ -2,7 +2,7 @@ import { DivComponent } from "../../common/div-component";
 import { Card } from "../card/card";
 
 export class CardsList extends DivComponent {
-    constructor(state, appState) {
+    constructor(appState, state) {
         super();
         this.state = state;
         this.appState = appState;

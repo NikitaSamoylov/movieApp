@@ -1,0 +1,43 @@
+.header-search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3rem;
+
+    &__input {
+        display: block;
+        width: 100%;
+        flex: 1;
+        background-color: #F3EFEF;
+        border-radius: 0.5rem;
+        padding: 8px 12px 8px 12px;
+        margin-right: 1rem;
+        transition: .3s;
+        border: 1px solid #F3EFEF;
+        color: $font-color-primary;
+        font-size: 1.6rem;
+
+        &::placeholder {
+            color: grey;
+        }
+
+        &:focus {
+            background-color: #fff;
+            border: 1px solid $font-color-secondary;
+            outline: none;
+            transition: .3s;
+            color: $font-color-primary;
+        }
+    }
+    &__button {
+        background-color: $font-color-secondary;
+        cursor: pointer;
+        padding: 9px;
+        border: none;
+        border-radius: 0.5rem;
+        transition: .3s;
+    }
+    &__button:hover {
+        transform: scale(1.05);
+    }
+}
