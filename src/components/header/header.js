@@ -1,6 +1,7 @@
 import { DivComponent } from "../../common/div-component";
 import '../../assets/img/logo.png';
 import '../../assets/img/favorites.png';
+import '../../assets/img/header-search-icon.png';
 
 export class Header extends DivComponent {
     constructor(appState) {
@@ -12,17 +13,22 @@ export class Header extends DivComponent {
         this.el.innerHTML = '';
         this.el.classList.add('header');
         this.el.innerHTML = `
-            <a class=""header__link href="/">
-            <img class="header__logo" src="/assets/logo.png" alt="Movie">
+            <a class="header__link" href="/">
+                <img class="header__logo" src="/assets/logo.png" alt="Movie">
             </a>
-            <div class="header__info header-info">
-                <div class="header-info__favorites">
-                    <img class="favorites-like" src="/assets/favorites.png">
-                    <a class="favorites-link" href="#favorites">
+            <div class="nav">
+                <div class="nav__item nav-item">
+                    <img class="nav-like" src="/assets/header-search-icon.png">
+                    <a class="nav-link" href="#">
+                        найти фильм   
+                    </a>
+                </div>
+                <div class="nav__item nav-item">
+                    <img class="nav-like" src="/assets/favorites.png">
+                    <a class="nav-link" href="#favorites">
                         избранное   
                     </a>
-                    <span class="favorites-counter">${this.appState.favorites.length}
-                    </span>
+                    <span class="nav-counter">${this.appState.favorites.length}</span>
                 </div>
             </div>
         `;

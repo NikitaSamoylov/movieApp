@@ -1,14 +1,18 @@
 .header {
     display: flex;
+    justify-content: space-between;
     padding-top: 2.3rem;
     margin-bottom: 3rem;
 }
 
-.header-info {
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     margin-top: auto;
     width: 100%;
 
-    &__favorites {
+    &__item {
         display: flex;
         justify-content: flex-end;
         padding-bottom: 3.6rem;
@@ -17,18 +21,23 @@
         cursor: pointer;
         color: $font-color-primary;
     }
+    &__item:first-child {
+        margin-right: 2rem;
+    }
 
 }
 
-.favorites-like {
+.nav-like {
     width: 1.5rem;
     height: 1.4rem;
     margin-right: 0.5rem;
 }
-.favorites-counter {
+.nav-counter {
     color: $font-color-secondary;
     padding-left: 1rem;
     display: block;
     align-items: center;
 }
-
+.nav-link {
+    color: $font-color-primary;
+}

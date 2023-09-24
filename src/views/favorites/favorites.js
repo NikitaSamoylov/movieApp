@@ -46,6 +46,7 @@ export class FavoritesView extends AbstractView {
         this.app.append(main);
         this.renderHeader();
     }
+    
     renderHeader() {
         const header = new Header(this.appState, this.state).render();
         this.app.prepend(header);
