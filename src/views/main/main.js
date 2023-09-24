@@ -70,14 +70,24 @@ export class MainView extends AbstractView {
     }
 
     render() {
-        this.app.innerHTML = '';
+        const title = document.createElement('div');
+        title.classList.add('main-title');
+        title.innerHTML = 
+        `
+            <h1 class="main-title__text">
+                нашлось ${this.state.total} шт
+            </h1>
+        `
         const main = document.createElement('div');
         main.classList.add('main');
         main.append(new Search(this.state).render());
+        main.append(title);
         main.append(new CardsList(this.appState, this.state).render())
+        this.app.innerHTML = '';
         this.app.append(main);
-        this.renderHeader()
+        this.renderHeader();
     }
+
     renderHeader() {
         const header = new Header(this.appState).render();
         this.app.prepend(header);

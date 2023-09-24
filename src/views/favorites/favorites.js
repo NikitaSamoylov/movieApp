@@ -30,10 +30,19 @@ export class FavoritesView extends AbstractView {
     }
     
     render() {
-        this.app.innerHTML = '';
+        const title = document.createElement('div');
+        title.classList.add('main-title');
+        title.innerHTML = 
+        `
+            <h1 class="main-title__text">
+                мои фильмы
+            </h1>
+        `
         const main = document.createElement('div');
         main.classList.add('main');
+        main.append(title);
         main.append(new CardsList(this.appState, {list: this.appState.favorites}).render());
+        this.app.innerHTML = '';
         this.app.append(main);
         this.renderHeader();
     }
