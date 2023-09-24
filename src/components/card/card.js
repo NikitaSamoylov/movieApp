@@ -41,7 +41,7 @@ export class Card extends DivComponent {
                 .addEventListener('click', this.#addToFavorites.bind(this))
         } else {
             this.el.querySelector('.card-buttons__favorites--like')
-                .addEventListener('click', this.#removeFromFavorites.bind(this))
+                .addEventListener('click', this.#removeFromFavorites.bind(this));
         }
 
         return this.el;

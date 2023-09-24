@@ -18,13 +18,13 @@ export class Header extends DivComponent {
             </a>
             <div class="nav">
                 <div class="nav__item nav-item">
-                    <img class="nav-like" src="/assets/header-search-icon.png">
-                    <a class="nav-link" href="#">
+                    <img class="nav-icon nav-icon--search" src="/assets/header-search-icon.png">
+                    <a class="nav-link nav-link--search" href="#">
                         найти фильм   
                     </a>
                 </div>
                 <div class="nav__item nav-item">
-                    <img class="nav-like" src="/assets/favorites.png">
+                    <img class="nav-icon" src="/assets/favorites.png">
                     <a class="nav-link" href="#favorites">
                         избранное   
                     </a>

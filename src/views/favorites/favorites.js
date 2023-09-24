@@ -11,14 +11,6 @@ export class FavoritesView extends AbstractView {
         this.setTitle('мои фильмы');
     }
 
-    state = {
-        list: [],
-        total: 0,
-        loading: false,
-        searchQuery: undefined,
-        offset: 0,
-    } 
-
     destroy() {
         onChange.unsubscribe(this.appState);
     }
@@ -45,6 +37,9 @@ export class FavoritesView extends AbstractView {
         this.app.innerHTML = '';
         this.app.append(main);
         this.renderHeader();
+        if (this.appState.favorites.length === 0) {
+            document.querySelector('.nav-link--search').click();
+        };
     }
     
     renderHeader() {
