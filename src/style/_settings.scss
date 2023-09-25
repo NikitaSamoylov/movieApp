@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background-color: rgb(248, 242, 229);
+    background-color: rgb(234, 232, 229);
     font-family: $font-family;
     color: $font-color-primary;
     // font-weight: normal;
@@ -21,10 +21,14 @@ body {
 
 .container {
     background-color: rgb(249, 247, 242);
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 0 $container-offset;
     max-width: $container-width;
+    height: 100%;
+    padding-bottom: 5rem;
+    border-radius: 1rem;
 }
+
 
 .page {
     height: 100%;
