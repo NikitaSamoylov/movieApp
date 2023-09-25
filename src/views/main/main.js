@@ -3,6 +3,7 @@ import { AbstractView } from "../../common/view";
 import { Header } from "../../components/header/header";
 import { CardsList } from "../../components/cards-list/cards-list";
 import { Search } from "../../components/search/search";
+import { Pagination } from "../../components/pagination/pagination";
 
 export class MainView extends AbstractView {
     constructor(appState) {
@@ -23,7 +24,7 @@ export class MainView extends AbstractView {
         total: 0,
         loading: false,
         searchQuery: undefined,
-        offset: 0,
+        offset: 1,
     }
 
     appStateHook(path) {
@@ -32,13 +33,10 @@ export class MainView extends AbstractView {
         }
     }
     async stateHook(path) {
-        let offset = 9;
-        if (path === 'searchQuery') {
+        if (path === 'searchQuery' || path === 'offset') {
             this.state.loading = true;
-            const data = await this.loadFilms(this.state.searchQuery, offset);
+            const data = await this.loadFilms(this.state.searchQuery, this.state.offset);
             this.state.loading = false;
-            // this.state.total = data.total;
-            // this.state.list = data.docs;
 
             const cleanData = [];
             let promise = new Promise((resolve, reject) => {
@@ -56,11 +54,11 @@ export class MainView extends AbstractView {
         };
         if (path === 'list' || path === 'loading' || path === 'total') {
             this.render();
-        };
+        }
     };
     
     async loadFilms(name, offset) {
-        const res = await fetch (`https://api.kinopoisk.dev/v1.2/movie/search?page=1&limit=${offset}&query=${name}`, {
+        const res = await fetch (`https://api.kinopoisk.dev/v1.2/movie/search?page=${offset}&limit=9&query=${name}`, {
             headers: {
               'X-API-KEY': 'K8GMKAA-47P4S4H-MWPHWW0-K7WNG37',
               'mode': 'no-corse'
@@ -82,7 +80,10 @@ export class MainView extends AbstractView {
         main.classList.add('main');
         main.append(new Search(this.state).render());
         main.append(title);
-        main.append(new CardsList(this.appState, this.state).render())
+        main.append(new CardsList(this.appState, this.state).render());
+        document.querySelector('.cards-list')
+        ? main.append(new Pagination(this.state).render())
+        : "";
         this.app.innerHTML = '';
         this.app.append(main);
         this.renderHeader();
