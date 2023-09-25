@@ -12,11 +12,18 @@ html {
 }
 
 body {
-    background-color: $bg-color-primary;
+    background-color: rgb(248, 242, 229);
     font-family: $font-family;
     color: $font-color-primary;
     // font-weight: normal;
     // font-size: 10px;
+}
+
+.container {
+    background-color: rgb(249, 247, 242);
+    margin: 0 auto;
+    padding: 0 $container-offset;
+    max-width: $container-width;
 }
 
 .page {
@@ -92,12 +99,6 @@ input {
     width: 1px;
     height: 1px;
     clip: rect(0 0 0 0);
-}
-
-.container {
-    margin: 0 auto;
-    padding: 0 $container-offset;
-    max-width: $container-width;
 }
 
 .js-focus-visible :focus:not(.focus-visible) {

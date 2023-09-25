@@ -37,20 +37,22 @@ export class MainView extends AbstractView {
             this.state.loading = true;
             const data = await this.loadFilms(this.state.searchQuery, this.state.offset);
             this.state.loading = false;
+            this.state.list = data.docs;
+            this.state.total = data.total;
 
-            const cleanData = [];
-            let promise = new Promise((resolve, reject) => {
-                data.docs.forEach(el => {
-                    if (el.poster) {
-                        resolve(cleanData.push(el))
-                    };
-                });
-            });
-            promise.then(() => {
-                let totalMovies = data.docs.length - cleanData.length;
-                this.state.list = cleanData;
-                this.state.total = data.total - totalMovies;
-            });
+            // const cleanData = [];
+            // let promise = new Promise((resolve, reject) => {
+            //     data.docs.forEach(el => {
+            //         if (el.poster) {
+            //             resolve(cleanData.push(el))
+            //         };
+            //     });
+            // });
+            // promise.then(() => {
+            //     let totalMovies = data.docs.length - cleanData.length;
+            //     this.state.list = cleanData;
+            //     this.state.total = data.total - totalMovies;
+            // });
         };
         if (path === 'list' || path === 'loading' || path === 'total') {
             this.render();
