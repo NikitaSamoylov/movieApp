@@ -3,15 +3,18 @@ import './index.html';
 import './index.scss';
 import { MainView } from "./views/main/main";
 import { FavoritesView } from "./views/favorites/favorites";
+import { MovieView } from "./views/movie/movie";
 
 class App {
     routes = [
         {path: '', view: MainView},
-        {path: '#favorites', view: FavoritesView}
+        {path: '#favorites', view: FavoritesView},
+        {path: '#movie', view: MovieView}
     ];
 
     appState = {
-        favorites: []
+        favorites: [],
+        choosenMovie: []
     }
 
     constructor() {

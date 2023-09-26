@@ -30,7 +30,7 @@ export class Card extends DivComponent {
                 <button class="card-buttons__favorites card-buttons__favorites--like ${exist ? 'item-in-favorites' : ""}">
                     <img class="card-buttons__icon" src="/assets/favorites-button.png" alt="like">
                 </button>
-                <button class="card-buttons__favorites card-buttons__favorites--text">
+                <button class="card-buttons__favorites card-buttons__favorites--text send-button">
                     подробнее
                 </button>
             </div>
@@ -43,6 +43,13 @@ export class Card extends DivComponent {
             this.el.querySelector('.card-buttons__favorites--like')
                 .addEventListener('click', this.#removeFromFavorites.bind(this));
         }
+
+        this.el.querySelector('.send-button')
+            .addEventListener('click', () => {
+                this.appState.choosenMovie.length = 0;
+                this.appState.choosenMovie.push(this.state);
+                location.href='#movie';
+            });
 
         return this.el;
     }

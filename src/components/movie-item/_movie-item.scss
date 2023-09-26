@@ -1,0 +1,59 @@
+.movie-container {
+
+    &__descr {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+    }
+}
+
+.movie-content {
+    display: flex;
+
+    &__poster {
+        width: 60rem;
+        height: auto;
+        border-radius: 1rem;
+        margin-right: 1.8rem;
+        margin-bottom: 1.8rem;
+    }
+}
+
+.movie-item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+        margin-bottom: 1.3rem;
+    }
+
+    &__img {
+        margin-right: 1rem;
+    }
+    &__text {
+        font-size: 1.6rem;
+    }
+}
+
+.movie-btn {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    color: $font-color-secondary;
+    background-color: #f9f8f5;
+    border: 1px solid $button-border-color;
+    border-radius: 0.5rem;
+    padding: 0.9rem 2.1rem;
+    cursor: pointer;
+    transition: .3s;
+    margin-bottom: 2.7rem;
+
+    &:hover {
+        transform: scale(1.03);
+        background-color: $buttons-bg-color-secondary;
+        border-color: $buttons-bg-color-secondary;
+    }
+    &__img {
+        margin-right: 1rem;
+    }
+
+}
