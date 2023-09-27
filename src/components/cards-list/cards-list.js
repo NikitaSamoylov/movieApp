@@ -4,12 +4,11 @@ import { Card } from "../card/card";
 export class CardsList extends DivComponent {
     constructor(appState, state) {
         super();
-        this.state = state;
         this.appState = appState;
+        this.state = state;
     }
 
     render() {
-
         const cardsList = document.createElement('div');
         cardsList.classList.add('cards-list');
         for (let card of this.state.list) {
@@ -17,7 +16,6 @@ export class CardsList extends DivComponent {
             this.el.append(cardsList);
         }
         return this.el;
-        
     }
 }
 

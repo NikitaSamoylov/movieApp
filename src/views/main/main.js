@@ -20,15 +20,15 @@ export class MainView extends AbstractView {
     }
 
     state = {
-        list: [],
-        total: 0,
+        // list: [],
+        // total: 0,
         loading: false,
         searchQuery: undefined,
         offset: 1,
     }
 
     appStateHook(path) {
-        if (path === 'favorites') {
+        if (path === 'favorites' || path === 'list' || path === 'total') {
             this.render();
         }
     }
@@ -37,10 +37,10 @@ export class MainView extends AbstractView {
             this.state.loading = true;
             const data = await this.loadFilms(this.state.searchQuery, this.state.offset);
             this.state.loading = false;
-            this.state.list = data.docs;
-            this.state.total = data.total;
+            this.appState.list = data.docs;
+            this.appState.total = data.total;
         };
-        if (path === 'list' || path === 'loading' || path === 'total') {
+        if (path === 'loading') {
             this.render();
         }
     };
@@ -61,14 +61,14 @@ export class MainView extends AbstractView {
         title.innerHTML = 
         `
             <h1 class="main-title__text">
-                нашлось ${this.state.total} шт
+                нашлось ${this.appState.total} шт
             </h1>
         `
         const main = document.createElement('div');
         main.classList.add('main');
         main.append(new Search(this.state).render());
         main.append(title);
-        main.append(new CardsList(this.appState, this.state).render());
+        main.append(new CardsList(this.appState, this.appState).render());
         document.querySelector('.cards-list')
         ? main.append(new Pagination(this.state).render())
         : "";

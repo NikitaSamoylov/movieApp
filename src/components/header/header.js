@@ -20,7 +20,7 @@ export class Header extends DivComponent {
                 <div class="nav__item nav-item">
                     <img class="nav-icon nav-icon--search" src="/assets/header-search-icon.png">
                     <a class="nav-link nav-link--search" href="#">
-                        найти фильм   
+                        к поиску фильма 
                     </a>
                 </div>
                 <div class="nav__item nav-item">
