@@ -20,8 +20,6 @@ export class MainView extends AbstractView {
     }
 
     state = {
-        // list: [],
-        // total: 0,
         loading: false,
         searchQuery: undefined,
         offset: 1,
@@ -61,7 +59,9 @@ export class MainView extends AbstractView {
         title.innerHTML = 
         `
             <h1 class="main-title__text">
-                нашлось ${this.appState.total} шт
+                ${this.state.loading
+                ? 'поиск фильма ...'
+                : 'нашлось ' + this.appState.total + ' шт'}
             </h1>
         `
         const main = document.createElement('div');
