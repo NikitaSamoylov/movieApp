@@ -6,6 +6,9 @@
         font-size: 2.4rem;
         transition: .3s;
         margin-bottom: 4.4rem;
+        @include tablet {
+            text-align: center;
+        }
     }
 }
 
@@ -15,5 +18,12 @@
     grid-column-gap: 3rem;
     grid-row-gap: 5rem;
     margin-bottom: 5rem;
+    @include small-laptop {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 0;
+    }
+    @include tablet {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 

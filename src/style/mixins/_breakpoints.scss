@@ -1,5 +1,11 @@
-@mixin big-desktop {
-    @media (max-width: $big-laptop) {
+@mixin small-laptop {
+    @media (max-width: $small-laptop) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $tablet) {
         @content;
     }
 }

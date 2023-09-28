@@ -22,7 +22,6 @@ class App {
     constructor() {
         window.addEventListener('hashchange', this.route.bind(this));
         this.route();
-        console.log('доделать индикатор загрузки, клик по карточке - Подробнее. Этот текст в main - constructor')
     }
 
     route() {

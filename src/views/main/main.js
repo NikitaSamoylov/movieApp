@@ -44,7 +44,9 @@ export class MainView extends AbstractView {
     };
     
     async loadFilms(name, offset) {
-        const res = await fetch (`https://api.kinopoisk.dev/v1.2/movie/search?page=${offset}&limit=9&query=${name}`, {
+        const res = await fetch (`https://api.kinopoisk.dev/v1.2/movie/search?page=${offset}&limit=${window.innerWidth >= 800
+        ? 9
+        : 8}&query=${name}`, {
             headers: {
               'X-API-KEY': 'K8GMKAA-47P4S4H-MWPHWW0-K7WNG37',
               'mode': 'no-corse'

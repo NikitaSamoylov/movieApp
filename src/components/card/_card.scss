@@ -15,6 +15,12 @@
         margin-bottom: 1.2rem;
         margin-right: auto;
         flex: 1;
+        @include small-laptop {
+            margin-right: 0;
+        }
+        @include tablet {
+            text-align: center;
+        }
     }
     &:hover {
         transform: scale(1.03);
@@ -51,3 +57,4 @@
     border-color: rgb(244, 218, 196) !important;
     background-color: rgb(244, 218, 196) !important;
 }
+
