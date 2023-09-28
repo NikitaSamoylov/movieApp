@@ -16,7 +16,8 @@ class App {
         favorites: [],
         choosenMovie: [],
         list: [],
-        total: 0
+        total: 0,
+        pages: 0
     }
 
     constructor() {

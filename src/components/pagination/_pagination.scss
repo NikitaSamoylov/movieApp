@@ -19,3 +19,9 @@
 .pagination-right__icon {
     margin-left: 1rem;
 }
+.pagination-center-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .3s;
+}

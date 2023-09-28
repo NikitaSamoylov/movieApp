@@ -23,8 +23,12 @@ export class Search extends DivComponent {
             </button>
             </div>
         `
-        this.el.querySelector('button').addEventListener('click', this.search.bind(this))
+        this.el.querySelector('button').addEventListener('click', this.search.bind(this));
+        document.addEventListener('keydown', (evt) => {
+            if (evt.code === 'Enter') {
+                this.search();
+            };
+        });
         return this.el;
     }
-
 }
