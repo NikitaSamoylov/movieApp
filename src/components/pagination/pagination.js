@@ -22,19 +22,18 @@ export class Pagination extends DivComponent {
         this.el.innerHTML = 
         `
             <button class="pagination__button pagination__button--left pagination-left">
-                <img class="pagination-left__icon" src="/assets/arrow-left.png" alt="back">
+                <img class="pagination-left__icon" src="assets/arrow-left.png" alt="back">
                 назад
             </button>
-            <img class="pagination-center-icon" src="/assets/final-icon.png" alt="the end of page">
+            <img class="pagination-center-icon" src="assets/final-icon.png" alt="the end of page">
             <button class="pagination__button pagination__button--right pagination-right">
                 дальше
-                <img class="pagination-right__icon" src="/assets/arrow-right.png" alt="further">
+                <img class="pagination-right__icon" src="assets/arrow-right.png" alt="further">
             </button>
         `
         const btns = this.el.querySelectorAll('.pagination__button');
         const leftBtn = this.el.querySelector('.pagination-left');
         const rightBtn = this.el.querySelector('.pagination-right');
-        // this.el.querySelectorAll('.pagination__button')
         btns.forEach((el) => {
             el.addEventListener('click', () => {
                 el.classList.contains('pagination__button--right')

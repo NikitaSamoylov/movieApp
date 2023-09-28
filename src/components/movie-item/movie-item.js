@@ -20,7 +20,7 @@ export class Movie extends DivComponent {
 
     render() {
         const exist = this.appState.favorites.find(el => el.id === this.appState.choosenMovie[0].id);
-        const defaultImg = "/assets/no-backdrop.png";
+        const defaultImg = "assets/no-backdrop.png";
         this.el.classList.add('movie');
         this.el.innerHTML = 
         `
@@ -34,21 +34,21 @@ export class Movie extends DivComponent {
                     alt="обложка фильма">
                     <ul class="movie-content__info">
                         <li class="movie-content__item movie-item">
-                            <img class="movie-item__img" src="/assets/rating-icon.png" alt="рейтинг">
+                            <img class="movie-item__img" src="assets/rating-icon.png" alt="рейтинг">
                             <span class="movie-item__text">${this.appState.choosenMovie[0].rating
                                 ? this.appState.choosenMovie[0].rating.toFixed(1)
                                 : "нет инфо"
                             }</span>
                         </li>
                         <li class="movie-content__item movie-item">
-                            <img class="movie-item__img" src="/assets/release-icon.png" alt="релиз">
+                            <img class="movie-item__img" src="assets/release-icon.png" alt="релиз">
                             <span class="movie-item__text">${this.appState.choosenMovie[0].year
                                 ? this.appState.choosenMovie[0].year + ' год'
                                 : "нет инфо"
                             }</span>
                         </li>
                         <li class="movie-content__item movie-item">
-                            <img class="movie-item__img" src="/assets/duration-icon.png" alt="длительность">
+                            <img class="movie-item__img" src="assets/duration-icon.png" alt="длительность">
                             <span class="movie-item__text">${this.appState.choosenMovie[0].movieLength
                                 ? this.appState.choosenMovie[0].movieLength + ' мин'
                                 : "нет инфо"
@@ -57,7 +57,7 @@ export class Movie extends DivComponent {
                     </ul>
                 </div>
                 <button class="movie-container__btn movie-btn ${exist ? 'item-in-favorites' : ""}">
-                    <img class="movie-btn__img" src="/assets/favorites-button.png" alt="like">
+                    <img class="movie-btn__img" src="assets/favorites-button.png" alt="like">
                     ${exist ? 'в избранном' : 'в избранное' }
                 </button>
                 <p class="movie-container__descr">

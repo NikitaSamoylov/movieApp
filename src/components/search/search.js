@@ -19,7 +19,7 @@ export class Search extends DivComponent {
             <div class="header-search">
             <input class="header-search__input" placeholder="я ищу фильм ..." value="${this.state.searchQuery ? this.state.searchQuery : ""}">
             <button class="header-search__button">
-                <img class="header-search__img" src="/assets/search-icon.png" alt="искать">
+                <img class="header-search__img" src="assets/search-icon.png" alt="искать">
             </button>
             </div>
         `

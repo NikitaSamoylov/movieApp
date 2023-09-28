@@ -38,7 +38,6 @@ export class MainView extends AbstractView {
             this.appState.list = data.docs;
             this.appState.total = data.total;
             this.appState.pages = data.pages;
-            console.log(data)
         };
         if (path === 'loading') {
             this.render();
@@ -72,10 +71,14 @@ export class MainView extends AbstractView {
         main.classList.add('main');
         main.append(new Search(this.state).render());
         main.append(title);
-        main.append(new CardsList(this.appState, this.appState).render());
-        document.querySelector('.cards-list')
+
+        const promise = new Promise((resolve) => {
+            resolve(main.append(new CardsList(this.appState, this.appState).render()))
+        })
+        promise.then((resolve) => document.querySelector('.cards-list')
         ? main.append(new Pagination(this.state, this.appState).render())
-        : "";
+        : '');
+
         this.app.innerHTML = '';
         this.app.append(main);
         this.renderHeader();
