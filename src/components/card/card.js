@@ -1,6 +1,5 @@
 import { DivComponent } from "../../common/div-component";
 import '../../assets/img/favorites-button.png';
-import '../../assets/img/poster.webp';
 import '../../assets/img/no-poster.png';
 
 export class Card extends DivComponent {
@@ -29,7 +28,7 @@ export class Card extends DivComponent {
         this.el.classList.add('card');
         this.el.innerHTML = 
         `
-            <img class="card__poster" src="${this.card.poster ? this.card.poster : defaultImg}" onclick="location.href='#movie'">   
+            <img class="card__poster" src="${this.card.poster ? this.card.poster : defaultImg}">   
             <h2 class="card__title">${this.card.name ? this.card.name : 'Нет инфо'}</h2>
             <div class="card__buttons card-buttons">
                 <button class="card-buttons__favorites card-buttons__favorites--like ${exist ? 'item-in-favorites' : ""}">
@@ -50,6 +49,8 @@ export class Card extends DivComponent {
         }
 
         this.el.querySelector('.send-button')
+        .addEventListener('click', this.#addChoosenMovie.bind(this));
+        this.el.querySelector('.card__poster')
         .addEventListener('click', this.#addChoosenMovie.bind(this));
 
         return this.el;
